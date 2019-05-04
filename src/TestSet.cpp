@@ -43,18 +43,18 @@ run() const {
             elapsedTime += elapsedTime1;
             
             for (int i = 0; i < maxTestNameLength + 32; i++) {
-                std::cout << "-";
+                std::cout << "<";
             }
             std::cout << "\n";
 
             std::cout << std::left << std::setw(maxTestNameLength)
                       << test.getName()
-                      << " ::     TEST FAILED in " << std::setprecision(4)
+                      << " :: [!] TEST FAILED in " << std::setprecision(4)
                       << std::fixed << elapsedTime1 << " s\n";
             std::cout << exception.what() << std::endl;
             
             for (int i = 0; i < maxTestNameLength + 32; i++) {
-                std::cout << "-";
+                std::cout << ">";
             }
             std::cout << "\n";
         }

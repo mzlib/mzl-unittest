@@ -24,6 +24,18 @@ public:
             bool b = false;
             MZL_UT::Assert::assertFalse(b);
         });
+        this->addTest("testAssertFloatEquals", [](){
+            MZL_UT::Assert::assertEquals(5.523123f + 0.000001f, 5.523124f, 0.01f);
+        });
+        this->addTest("testAssertFloatNotEquals", [](){
+            MZL_UT::Assert::assertNotEquals(5.523123f + 0.000001f, 5.523124f, 0.0f);
+        });
+        this->addTest("testAssertDoubleEquals", [](){
+            MZL_UT::Assert::assertEquals(5.523123f + 0.000001, 5.523124, 0.01);
+        });
+        this->addTest("testAssertDoubleNotEquals", [](){
+            MZL_UT::Assert::assertNotEquals(5.523123123 + 0.000000001, 5.523123124, 0.0);
+        });
     }
 };
 

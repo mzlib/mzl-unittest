@@ -26,6 +26,46 @@ namespace mzl::unittest {
             }
         }
 
+        static void assertEquals(float value, float expected, float e) {
+            if ((value < expected - e) || (value > expected + e)) {
+                std::stringstream ss;
+                ss << "assertEquals(" << value << ", " << expected << "," 
+                   << e << ")";
+
+                throw AssertionException(ss.str());
+            }
+        }
+
+        static void assertNotEquals(float value, float expected, float e) {
+            if ((value >= expected - e) && (value <= expected + e)) {
+                std::stringstream ss;
+                ss << "assertNotEquals(" << value << ", " << expected << "," 
+                   << e << ")";
+
+                throw AssertionException(ss.str());
+            }
+        }
+
+        static void assertEquals(double value, double expected, double e) {
+            if ((value < expected - e) || (value > expected + e)) {
+                std::stringstream ss;
+                ss << "assertEquals(" << value << ", " << expected << "," 
+                   << e << ")";
+
+                throw AssertionException(ss.str());
+            }
+        }
+
+        static void assertNotEquals(double value, double expected, double e) {
+            if ((value >= expected - e) && (value <= expected + e)) {
+                std::stringstream ss;
+                ss << "assertNotEquals(" << value << ", " << expected << "," 
+                   << e << ")";
+
+                throw AssertionException(ss.str());
+            }
+        }
+
         static void assertTrue(bool value) {
             if (value != true) {
                 std::stringstream ss;
