@@ -9,10 +9,12 @@ class TestSetA : public MZL_UT::TestSet {
 public:
     TestSetA() {
         this->addTest("testTrue", [](){
-            MZL_UT::Assert::assertEquals(5 * 2, 10);
+            int x = 5 * 2;
+            MZL_UT::Assert::assertEquals(x, 10);
         });
         this->addTest("testFalse", [](){
-            MZL_UT::Assert::assertNotEquals(5 + 2, 10);
+            int x = 5 + 2;
+            MZL_UT::Assert::assertNotEquals(x, 10);
         });
     }
 };

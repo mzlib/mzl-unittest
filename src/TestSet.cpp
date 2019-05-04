@@ -6,7 +6,7 @@ addTest(const std::string &testName, const std::function<void()> &func) {
     this->tests.push_back(test);
 }
 
-void mzl::unittest::TestSet::
+bool mzl::unittest::TestSet::
 run() {
     unsigned int maxTestNameLength = 0;
     unsigned int passedTests = 0;
@@ -50,4 +50,6 @@ run() {
     }
     std::cout << " passed in " << elapsedTime << " s\n";
     std::cout << "---------------------------\n";
+
+    return passedTests == this->tests.size();
 }

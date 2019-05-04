@@ -16,7 +16,7 @@ namespace mzl::unittest {
     public:
         void addTest(const std::string& testName, 
                      const std::function<void()> &tests);
-        void run();
+        bool run();
     };
 }
 
