@@ -5,11 +5,11 @@
 class TestSetA : public mzl::unittest::TestSet {
 public:
     TestSetA() {
-        this->addTest("testFalse", [](){
-            return false;
-        });
         this->addTest("testTrue", [](){
-            return true;
+            mzl::unittest::Test::assert(2 * 5, 10);
+        });
+        this->addTest("testFalse", [](){
+            mzl::unittest::Test::assert(2 + 5, 10);
         });
     }
 };
