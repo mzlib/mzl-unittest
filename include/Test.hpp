@@ -16,7 +16,7 @@ namespace mzl::unittest {
     public:
         Test(const std::string& name, std::function<void()> func);
 
-        void run();
+        void run() const;
 
         std::string getName() const;
     };

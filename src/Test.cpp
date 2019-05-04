@@ -5,7 +5,7 @@ mzl::unittest::Test::Test(const std::string& name, std::function<void()> func) {
     this->func = func;
 }
 
-void mzl::unittest::Test::run() {
+void mzl::unittest::Test::run() const {
     this->func();
 }
 
