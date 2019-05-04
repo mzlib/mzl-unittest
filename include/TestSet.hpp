@@ -7,10 +7,7 @@
 #include <ctime>
 #include <iomanip>
 #include "Test.hpp"
-<<<<<<< HEAD
-=======
 #include "AssertionException.hpp"
->>>>>>> asserts
 
 namespace mzl::unittest {
     class TestSet {
@@ -18,11 +15,7 @@ namespace mzl::unittest {
         std::vector<Test> tests;
     public:
         void addTest(const std::string& testName, 
-<<<<<<< HEAD
-                     const std::function<bool()> &tests);
-=======
                      const std::function<void()> &tests);
->>>>>>> asserts
         void run();
     };
 }
