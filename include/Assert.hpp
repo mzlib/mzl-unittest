@@ -25,6 +25,24 @@ namespace mzl::unittest {
                 throw AssertionException(ss.str());
             }
         }
+
+        static void assertTrue(bool value) {
+            if (value != true) {
+                std::stringstream ss;
+                ss << "assertTrue(" << value << ")";
+
+                throw AssertionException(ss.str());
+            }
+        }
+
+        static void assertFalse(bool value) {
+            if (value != false) {
+                std::stringstream ss;
+                ss << "assertFalse(" << value << ")";
+
+                throw AssertionException(ss.str());
+            }
+        }
     };
 }
 
