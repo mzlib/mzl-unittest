@@ -14,16 +14,6 @@ namespace mzl::unittest {
         std::string name;
         std::function<void()> func;
     public:
-        template<class T>
-        static void assert(T value, T expected) {
-            if (value != expected) {
-                std::stringstream ss;
-                ss << "assert(" << value << ", " << expected << ")";
-
-                throw AssertionException(ss.str());
-            }
-        }
-
         Test(const std::string& name, std::function<void()> func);
 
         void run();
