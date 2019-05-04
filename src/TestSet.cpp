@@ -8,8 +8,15 @@ addTest(const std::string &testName, const std::function<bool()> &func) {
 
 void mzl::unittest::TestSet::
 run() {
+    unsigned int maxTestNameLength = 0;
     unsigned int passedTests = 0;
     double elapsedTime = 0.0;
+
+    for (auto test : this->tests) {
+        if (test.getName().length() > maxTestNameLength) {
+            maxTestNameLength = test.getName().length();
+        }
+    }
 
     for (auto test : this->tests) {
         clock_t start = clock();
@@ -21,9 +28,13 @@ run() {
         passedTests += passed;
 
         if (passed) {
-            std::cout << "    TEST PASSED in " << elapsedTime1 << " s\n";
+            std::cout << std::left << std::setw(maxTestNameLength) 
+                      << test.getName()
+                      << " ::     TEST PASSED in " << elapsedTime1 << " s\n";
         } else {
-            std::cout << "[!] TEST FAILED in " << elapsedTime1 << " s\n";
+            std::cout << std::left << std::setw(maxTestNameLength)
+                      << test.getName()
+                      << " :: [!] TEST FAILED in " << elapsedTime1 << " s\n";
         }
 
         elapsedTime += elapsedTime1;

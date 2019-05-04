@@ -5,6 +5,7 @@
 #include <vector>
 #include <functional>
 #include <ctime>
+#include <iomanip>
 #include "Test.hpp"
 
 namespace mzl::unittest {
